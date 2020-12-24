@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 選取器 selector */
+        /* 
+            1. 標籤 tag
+            2. 類別 class
+            3. id
+        */
+        /* 標籤選取器 */
+        h1 {
+            color: red;
+        }
+
+        /* 類別選取器 class (可重複使用)*/
+        .abc {
+            color: #008cff;
+        }
+        /* id選取器 (只可使用一次)*/
+        #xyz {
+            color: greenyellow;
+        }
+        /* 
+            1. 儘可能用小寫
+            2. 開頭只可用英文或底線
+            3. 符號可用-或_
+        */
+
+        /* 
+            CSS權重
+            1. 權重愈重，優先套用
+            2. 物以稀為貴
+            3. 分數越高越重
+
+            Tag > Class > Id
+        */
+    </style>
+</head>
+<body>
+    <h1>title</h1>
+    <h1>title</h1>
+    <h1>title</h1>
+    <p class="abc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum alias asperiores facere iusto. Voluptates mollitia quasi officiis perspiciatis aperiam architecto odit, ab quas commodi deserunt, assumenda tenetur reprehenderit illum ratione?
+    </p>
+    <h2 id="xyz">title</h2>
+    <ul>
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+    </ul>
+    <a href="#">link</a>
+    <script>
+        console.log(document.getElementById('xyz'));
+    </script>
+</body>
+</html>
