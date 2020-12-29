@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first, #second, #third, #fourth {
+            width: 100%;
+            height: 600px;
+            /* height: 100vh; */
+            /* view height */
+        }
+        #first {
+            background: url("https://picsum.photos/id/56/1800/1600") no-repeat fixed center center / cover;
+            clip-path: polygon(0 0,100% 0, 100% 80%, 50% 100%,0 80%); 
+            margin-bottom: -20%;   
+        }
+        #second {
+            background-color: #f5b561;
+        }
+        #third {
+            background: url("https://picsum.photos/id/59/1800/1600") no-repeat fixed center center / cover;
+        }
+        #fourth {
+            background-color: #9ad3bc;
+        }
+    </style>
+</head>
+<body>
+    <div id="first"></div>
+    <div id="second"></div>
+    <div id="third"></div>
+    <div id="fourth"></div>
+</body>
+</html>
