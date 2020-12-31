@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            background-color: #74c7b8;
+            display: inline-block;
+        }
+        /* 
+            inline-block 缺點
+            元素之間會有4px不等的空隙
+
+            解決方式
+            1. 將父元素的font-size設為0
+            2. 將自己的font-size還原
+            3. 設定vertical-align
+         */
+        body {
+            font-size: 0;
+        }
+        .box {
+            font-size: 16px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa deserunt ut cumque nemo? Maiores sint architecto veritatis, excepturi ex voluptates est culpa mollitia ea in. Impedit cum hic vel.
+    </div>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa deserunt ut cumque nemo? Maiores sint architecto veritatis, excepturi ex voluptates est culpa mollitia ea in. Impedit cum hic vel.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa deserunt ut cumque nemo? Maiores sint architecto veritatis, excepturi ex voluptates est culpa mollitia ea in. Impedit cum hic vel.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa deserunt ut cumque nemo? Maiores sint architecto veritatis, excepturi ex voluptates est culpa mollitia ea in. Impedit cum hic vel.
+    </div>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa deserunt ut cumque nemo? Maiores sint architecto veritatis, excepturi ex voluptates est culpa mollitia ea in. Impedit cum hic vel.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa deserunt ut cumque nemo? Maiores sint architecto veritatis, excepturi ex voluptates est culpa mollitia ea in. Impedit cum hic vel.
+    </div>
+</body>
+</html>
