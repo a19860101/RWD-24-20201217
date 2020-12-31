@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex flexible box</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1200px;
+            height: 800px;
+            margin: auto;
+            background-color: #ccc;
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* flex-direction: column-reverse; */
+            /* row, row-reverse, column, column-reverse */
+
+            flex-flow: wrap row;
+
+            justify-content: flex-start;
+            /* flex-start, flex-end, center,space-around, space-between, space-evenly */
+
+            align-items: baseline;
+            /* flex-start, flex-end, center, stretch , baseline */
+
+        }
+        .box {
+            /* width: calc(100% / 6); */
+            flex-basis: 500px;
+            /* flex-grow:0; *//*預設:沒有延展*/
+            /* flex-shrink; *//*預設:有壓縮 會跟 flex-wrap: wrap 衝突*/
+            padding: 15px;
+
+            /* background-color: #fa0; */
+        }
+
+        .box:nth-of-type(1){
+            background-color: #fa0;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        .box:nth-of-type(2){
+            background-color: #0af;
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+        .box:nth-of-type(3){
+            background-color: #f05;
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+        .box:nth-of-type(4){
+            background-color: #0fa;
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            1Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, aut ab distinctio modi nisi officiis officia vitae voluptate quod maiores amet! Corrupti impedit temporibus obcaecati deserunt, quas quibusdam facere provident.
+        </div>
+        <div class="box">
+            2Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, aut ab distinctio modi nisi officiis officia vitae voluptate quod maiores amet! Corrupti impedit temporibus obcaecati deserunt, quas quibusdam facere provident.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, aut ab distinctio modi nisi officiis officia vitae voluptate quod maiores amet! Corrupti impedit temporibus obcaecati deserunt, quas quibusdam facere provident.
+        </div>
+        <div class="box">
+            3Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, aut ab distinctio modi nisi officiis officia vitae voluptate quod maiores amet! Corrupti impedit temporibus obcaecati deserunt, quas quibusdam facere provident.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, aut ab distinctio modi nisi officiis officia vitae voluptate quod maiores amet! Corrupti impedit temporibus obcaecati deserunt, quas quibusdam facere provident.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, aut ab distinctio modi nisi officiis officia vitae voluptate quod maiores amet! Corrupti impedit temporibus obcaecati deserunt, quas quibusdam facere provident.
+        </div>
+        <div class="box">
+            4Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, aut ab distinctio modi nisi officiis officia vitae voluptate quod maiores amet! Corrupti impedit temporibus obcaecati deserunt, quas quibusdam facere provident.
+        </div>
+
+    </div>
+</body>
+</html>
