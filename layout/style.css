@@ -1,0 +1,105 @@
+/* * RESET / GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* *grid */
+.col-1 {
+    flex: 0 0 calc(100% / 12 * 1);
+}
+.col-2 {
+    flex: 0 0 calc(100% / 12 * 2);
+}
+.col-3 {
+    flex: 0 0 calc(100% / 12 * 3);
+}
+.col-4 {
+    flex: 0 0 calc(100% / 12 * 4);
+}
+.col-5 {
+    flex: 0 0 calc(100% / 12 * 5);
+}
+.col-6 {
+    flex: 0 0 calc(100% / 12 * 6);
+}
+.col-7 {
+    flex: 0 0 calc(100% / 12 * 7);
+}
+.col-8 {
+    flex: 0 0 calc(100% / 12 * 8);
+}
+.col-9 {
+    flex: 0 0 calc(100% / 12 * 9);
+}
+.col-10 {
+    flex: 0 0 calc(100% / 12 * 10);
+}
+.col-11 {
+    flex: 0 0 calc(100% / 12 * 11);
+}
+.col-12 {
+    flex: 0 0 calc(100% / 12 * 12);
+}
+/* *BUTTON */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ffe139;
+    color: #222;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* * NAV */
+nav {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    /* height: 60px; */
+    background-color: #222;
+    text-align: center;
+}
+/* !後代選取器 */
+nav a {
+    color: #eee;
+    text-decoration: none;
+    margin: 0 10px;
+    text-transform: uppercase;
+}
+/* *HEADER */
+header {
+    background: url('https://picsum.photos/id/26/1920/1080')no-repeat fixed center / cover;
+    /* padding-top: 300px; */
+    /* padding-bottom: 300px; */
+}
+header .row {
+    height: 800px;
+    align-items: center;
+}
+header .content {
+    text-align: center;
+    color: #fff;
+}
+header h1 {
+    font-size: 100px;
+    font-weight: 900;
+}
+header p {
+    padding: 0 100px;
+    margin-bottom: 30px;
+}
+/* * ABOUT */
