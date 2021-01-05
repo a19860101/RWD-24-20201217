@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            box-sizing: border-box;
+        }
+        .container {
+            width: 1200px;
+            height: 800px;
+            margin: auto;
+            background-color: #ccc;
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* flex-direction: column-reverse; */
+            /* row, row-reverse, column, column-reverse */
+
+            flex-flow: wrap row;
+
+            justify-content: flex-start;
+            /* flex-start, flex-end, center,space-around, space-between, space-evenly */
+
+            align-items: baseline;
+            /* flex-start, flex-end, center, stretch , baseline */
+
+        }
+        .box {
+            flex:1 0 calc(100% / 3 - 20px);
+             /*flex: [grow] [shrink] [basis]  */
+            padding: 15px;
+            margin:10px;
+            background-color: #fa0;
+        }
+
+        .box:nth-of-type(1){order:2;}
+        /* .box:nth-of-type(2){order:4;} */
+        .box:nth-of-type(3){order:1;}
+        /* .box:nth-of-type(4){order:5;} */
+        .box:nth-of-type(5){order:3;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>title 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ex porro ea nemo nulla eum earum nostrum odit esse recusandae cum labore amet, maiores, unde temporibus obcaecati deserunt perspiciatis ipsam!</p>
+        </div>
+        <div class="box">
+            <h2>title 2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ex porro ea nemo nulla eum earum nostrum odit esse recusandae cum labore amet, maiores, unde temporibus obcaecati deserunt perspiciatis ipsam!</p>
+        </div>
+        <div class="box">
+            <h2>title 3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ex porro ea nemo nulla eum earum nostrum odit esse recusandae cum labore amet, maiores, unde temporibus obcaecati deserunt perspiciatis ipsam!</p>
+        </div>
+        <div class="box">
+            <h2>title 4</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ex porro ea nemo nulla eum earum nostrum odit esse recusandae cum labore amet, maiores, unde temporibus obcaecati deserunt perspiciatis ipsam!</p>
+        </div>
+        <div class="box">
+            <h2>title 5</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ex porro ea nemo nulla eum earum nostrum odit esse recusandae cum labore amet, maiores, unde temporibus obcaecati deserunt perspiciatis ipsam!</p>
+        </div>
+
+    </div>
+</body>
+</html>

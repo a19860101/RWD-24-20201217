@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1000px;
+            height: 800px;
+            background-color: #ccc;
+
+            position: relative;
+            /* 限制絕對定位的範圍 */
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+            /* opacity: .6; */
+
+            position: absolute;
+            /* top, bottom, left, right */
+            /* left: 50px; */
+            /* top: 50px;  */
+            bottom: 0;
+            left: 0;
+
+
+            z-index: 10;  
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: #0af;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        定位 position
+        1. static 靜態
+        2. relative 相對
+        3. absolute 絕對
+        4. fixed 固定
+        5. sticky 黏性
+
+     -->
+     <div class="container">
+        <div class="box"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

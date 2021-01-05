@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+            /* opacity: .6; */
+
+            position: relative;
+            /* top, bottom, left, right */
+            left: 50px;
+            top: 50px; 
+
+
+            z-index: 10;  
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: #0af;
+            /* opacity: .6; */
+            position: relative;
+
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        定位 position
+        1. static 靜態
+        2. relative 相對
+        3. absolute 絕對
+        4. fixed 固定
+        5. sticky 黏性
+
+     -->
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>
