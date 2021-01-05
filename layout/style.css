@@ -53,6 +53,13 @@
 .col-12 {
     flex: 0 0 calc(100% / 12 * 12);
 }
+[class^="col"]{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* ? [class^="col"] 開頭是col */
+/* ? [class*="col"] 包含col*/
+/* ? [class$="col"] 結尾是col*/
 /* *BUTTON */
 .btn {
     display: inline-block;
@@ -62,7 +69,14 @@
     padding: 10px 20px;
     border-radius: 5px;
 }
-
+/* *SECTION-TITLE */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section-title h2 {
+    font-size: 32px;
+}
 /* * NAV */
 nav {
     width: 100%;
@@ -103,3 +117,15 @@ header p {
     margin-bottom: 30px;
 }
 /* * ABOUT */
+#about {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+#about h3 {
+    font-size: 24px;
+}
+#about p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
