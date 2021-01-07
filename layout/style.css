@@ -23,6 +23,13 @@
     padding-left: 0!important;
     padding-right: 0!important;
 }
+img {
+    /* display: block; */
+    vertical-align: top;
+    /* 
+        * vertical-align只對table, inline, inline-block有效
+    */
+}
 /* *grid */
 .col-1 {
     flex: 0 0 calc(100% / 12 * 1);
@@ -135,4 +142,13 @@ header p {
     margin-top: 15px;
     margin-bottom: 15px;
     line-height: 1.5;
+}
+/* * NEWS */
+#news {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-color: #fdffbc;
+}
+#news .top {
+    margin-bottom: 30px;
 }
