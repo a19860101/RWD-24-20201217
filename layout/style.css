@@ -152,3 +152,8 @@ header p {
 #news .top {
     margin-bottom: 30px;
 }
+/* * PRODUCTS */
+#products {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
