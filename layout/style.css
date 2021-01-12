@@ -19,6 +19,9 @@
 .w-100 {
     width: 100%;
 }
+.rounded {
+    border-radius: 10px;
+}
 .no-padding {
     padding-left: 0!important;
     padding-right: 0!important;
@@ -188,6 +191,9 @@ header p {
 .effect {
     position: relative;
 }
+.effect h3 {
+    font-size: 26px;
+}
 .effect .content {
     position: absolute;
     width: calc(100% - 30px);
@@ -195,6 +201,16 @@ header p {
     background-color: rgba(0, 0, 0, 0.657);
     top: 0;
     left: 15px;
+    color: #fff;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: .5s;
+}
+.effect:hover .content{
+    opacity: 1;
 }
 /* * PRODUCTS */
 #products {
