@@ -185,6 +185,17 @@ header p {
 #news .top {
     margin-bottom: 30px;
 }
+.effect {
+    position: relative;
+}
+.effect .content {
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.657);
+    top: 0;
+    left: 15px;
+}
 /* * PRODUCTS */
 #products {
     /* padding-top: calc(150px + 8vw); */
