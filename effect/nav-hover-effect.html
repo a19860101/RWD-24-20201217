@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Gill Sans MT";
+        }
+        nav {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #232;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+
+            position: relative;
+            background-color: #ccc;
+
+        }
+        nav a::after {
+            content:"";
+            border-bottom: 2px solid #fa0;
+            position: absolute;
+            width: 100%;
+            bottom: -5px;
+            left: 0;
+        }
+        /* 
+            虛擬元素 before , after 
+            * 產生的元素為行內元素
+            * 產生的位置是在元素之內
+            * 一定會有content屬性
+        */
+        h1::before {
+            content: "之前"
+        }
+        h1::after {
+            content: "之後"
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">LINK 1</a>
+        <a href="#">LINK 2</a>
+        <a href="#">LINK 3</a>
+        <a href="#">LINK 4</a>
+    </nav>
+    <h1>HELLO</h1>
+</body>
+</html>
