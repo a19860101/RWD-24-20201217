@@ -26,7 +26,6 @@
             margin-right: 10px;
 
             position: relative;
-            background-color: #ccc;
 
         }
         nav a::after {
@@ -36,6 +35,14 @@
             width: 100%;
             bottom: -5px;
             left: 0;
+
+            transform: scaleX(0);
+            transition: .3s;
+            transform-origin: right;
+        }
+        
+        nav a:hover::after {
+            transform: scaleX(1);
         }
         /* 
             虛擬元素 before , after 
