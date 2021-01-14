@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 視埠 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 600以下 */
+        .container {
+            width: 100%;
+            background-color: #fa0;
+            margin: auto;
+        }
+        /* 600以上 */
+        @media(min-width: 600px){
+            .container {
+                width: 600px;
+                background-color: #0af;
+            }
+            h1 {
+                font-size: 40px;
+            }
+        }
+        /* 1000以上 */
+        @media(min-width: 1000px){
+            .container {
+                width: 1000px;
+                background-color: #f0a;
+            }
+            h1 {
+                font-size: 60px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HELLO RWD MAX</h1>
+    </div>
+</body>
+</html>
