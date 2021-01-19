@@ -1,0 +1,26 @@
+/* * RESET / GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+.w-100 {
+    width: 100%;
+}
+.rounded {
+    border-radius: 10px;
+}
+.no-padding {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+img {
+    /* display: block; */
+    vertical-align: top;
+    /* 
+        * vertical-align只對table, inline, inline-block有效
+    */
+}

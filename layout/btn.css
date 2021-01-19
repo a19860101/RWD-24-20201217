@@ -1,0 +1,15 @@
+/* *BUTTON */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ffe139;
+    color: #222;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: .3s;
+}
+/* ? 虛擬類別 */
+.btn:hover {
+    background-color: #ff4665;
+    color: #fff;
+}
