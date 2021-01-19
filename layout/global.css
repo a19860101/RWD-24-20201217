@@ -1,12 +1,5 @@
 /* * RESET / GLOBAL */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap');
-:root {
-    --spacing: 15px;
-    --sm: 480px;
-    --md: 760px;
-    --lg: 1024px;
-    --xl: 1200px;
-}
 * {
     margin: 0;
     padding: 0;
