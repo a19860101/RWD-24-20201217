@@ -57,8 +57,13 @@ header .content {
     color: #fff;
 }
 header h1 {
-    font-size: 100px;
+    font-size: 60px;
     font-weight: 900;
+}
+@media(min-width: 760px){
+    header h1 {
+        font-size: 100px;
+    }
 }
 header p {
     padding: 0 100px;
