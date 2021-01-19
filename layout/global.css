@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap');
 :root {
     --spacing: 15px;
+    --sm: 480px;
+    --md: 760px;
+    --lg: 1024px;
+    --xl: 1200px;
 }
 * {
     margin: 0;
@@ -207,7 +211,7 @@ img {
     .my-lg-4 { margin-top:calc( var(--spacing) * 4);margin-bottom: calc( var(--spacing) * 4);}
     .my-lg-5 { margin-top:calc( var(--spacing) * 5);margin-bottom: calc( var(--spacing) * 5);}
 }
-@media(min-width: 1200px){
+@media(min-width:  1200px){
     .m-xl-0 { margin: 0;}
     .m-xl-1 { margin: calc( var(--spacing) * 1);}
     .m-xl-2 { margin: calc( var(--spacing) * 2);}
