@@ -203,7 +203,7 @@
         </div>
     </div>
     <div id="product" class="container-fluid px-0">
-        <div class="row row-cols-6 g-0">
+        <div class="row row-cols-lg-6 row-cols-md-4 row-cols-sm-3 row-cols-2 g-0">
             <div class="col">
                 <a href="#">
                     <img src="https://picsum.photos/id/3/800/600" class="w-100">
@@ -269,12 +269,12 @@
     <div id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-6 text-center mx-auto">
+                <div class="col-lg-6 col-10 text-center mx-auto">
                     <h2>Contact</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci reiciendis harum aperiam corporis nihil placeat!</p>
                 </div>
                 <div class="w-100 my-4"></div>
-                <div class="col-6 mx-auto">
+                <div class="col-lg-8 col-10 mx-auto">
                     <form action="">
                         <div class="mb-3">
                             <label for="" class="form-label">Name</label>
@@ -292,8 +292,11 @@
                             <label for="" class="form-label">Comment</label>
                             <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
                         </div>
-                        <div>
+                        <div class="text-center d-none d-md-block">
                             <input type="submit" class="btn btn-outline-primary" value="Go">
+                        </div>
+                        <div class="d-block d-md-none">
+                            <input type="submit" class="btn btn-outline-primary d-block w-100" value="Go">
                         </div>
                     </form>
                 </div>
