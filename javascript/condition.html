@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Condition 判斷式</h1>
+    <script>
+        let x = 'test';
+        if(x > 0){
+            console.log('success');
+        }
+
+        if(x < 0){
+            console.log('success 2');
+        }else{
+            console.log('error');
+        }
+
+        if(x > 0){
+            console.log('正數');
+        }else if(x < 0){
+            console.log('負數');
+        }else{
+            console.log('error!!');
+        }
+
+        //switch
+        let a = 10;
+        switch(a){
+            case 0:
+                console.log(0);
+                break;
+            case 1:
+                console.log(1);
+                break;
+            case 2:
+                console.log(2);
+                break;
+            default:
+                console.log('no match');
+        }
+
+        switch(true){
+            case a > 0:
+                console.log('大於零');
+                break;
+            case a < 0:
+                console.log('小於零');
+                break;
+            default:
+                console.log(0);
+        }
+
+        let ans = a > 0 ?'success':'error';
+        console.log(ans);
+    </script>
+</body>
+</html>

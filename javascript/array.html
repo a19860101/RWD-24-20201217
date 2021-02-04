@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a = new Array();
+        // a[0] = 'Apple';
+        // a[1] = 'Banana';
+        // a[2] = 'Cat';
+
+        // let a = new Array('Apple','Banana','Cat');
+
+        let a = ['Apple','Banana','Cat','Dog','Egg'];
+        // console.log(a);
+        // console.log(a[0]);
+        // console.log(a[1]);
+        // console.log(a[2]);
+        // console.log(a.length)
+        // for(let i=0;i < a.length;i++){
+            // console.log(a[i]);
+        // }
+        // for(let data in a){
+        //     console.log(data);
+        //     // console.log(a[data])
+        // }
+        // for(let data of a){
+        //     console.log(data);
+        // }
+
+        a.forEach(function(data,idx){
+            console.log(data,idx);
+        });
+        
+        let drinks = ['紅茶','綠茶','QQ咩噗茶','冰淇淋紅茶'];
+        drinks.forEach(function(drink,idx){
+            console.log(drink);
+        })
+    </script>
+</body>
+</html>
