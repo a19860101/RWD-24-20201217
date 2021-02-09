@@ -20,6 +20,8 @@
         // console.log(a[1]);
         // console.log(a[2]);
         // console.log(a.length)
+        
+        //陣列迭代
         // for(let i=0;i < a.length;i++){
             // console.log(a[i]);
         // }
@@ -31,14 +33,52 @@
         //     console.log(data);
         // }
 
-        a.forEach(function(data,idx){
-            console.log(data,idx);
-        });
+        // a.forEach(function(data,idx){
+        //     console.log(data,idx);
+        // });
         
         let drinks = ['紅茶','綠茶','QQ咩噗茶','冰淇淋紅茶'];
+
+        // drinks.push('拿鐵');
+        // drinks.pop();
+        // drinks.unshift('拿鐵');
+        // drinks.shift();
+        // drinks[drinks.length] = '拿鐵';
+        // drinks[drinks.length] = '美式';
+
+        //splice() 拼接
+
+        // drinks.splice(1,0,'拿鐵','美式');
+        // drinks.splice(2,1);
+
+        //slice() 切片 -> 會產生新的陣列
+        // let drinks_slice = drinks.slice(1,3);
+        // console.log(drinks_slice);
+
+        //join() 陣列->字串  -> 會產生新的字串
+        // let drinks_string = drinks.join('_');
+        // console.log(drinks_string)
+
+
+        //split() 字串->陣列  -> 會產生新的陣列
+        let text = '超好喝QQ咩噗茶';
+        let text_array = text.split('');
+        console.log(text_array);
+        
+        let text2 = '紅茶,綠茶,QQ咩噗茶,冰淇淋紅茶';
+        let text2_array = text2.split(',');
+        console.log(text2_array);
+
         drinks.forEach(function(drink,idx){
             console.log(drink);
         })
+        let fruits = ['coconut','kiwi','apple','peach','banana'];
+        // fruits.sort();
+        // fruits.reverse();
+        // fruits.sort().reverse();
+        console.log(fruits);
+
+        console.log(text.split('').reverse().join(''));
     </script>
 </body>
 </html>

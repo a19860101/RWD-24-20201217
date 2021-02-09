@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var與let,const的scope(範疇)不同
+        // var -> function scope
+        // let,const -> block scope
+
+        // function test(){
+            // var x = 100;
+            // let y = 100;
+        // }
+        // test();
+        // console.log(x);
+
+        // let x = true;
+        // if(x){
+        //     var a = 'hello';
+        //     let b = 'hello';
+        // }
+        // console.log(b);
+
+        // let x = 'hello';
+        // function hello(){
+        //     console.log(x,'inner');
+        // }
+        // hello();
+        // console.log(x,'outer');
+
+        let x = 10;
+        function calc(){
+            x++;
+            console.log(x,'inner');
+        }
+        calc(); 
+        console.log(x,'outer');
+
+        const z =  ['紅茶','綠茶','QQ咩噗茶','冰淇淋紅茶'];
+        z.push('拿鐵');
+        z.sort();
+        z.unshift('水');
+        console.log(z);
+
+    </script>
+</body>
+</html>
