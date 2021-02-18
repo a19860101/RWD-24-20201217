@@ -7,19 +7,35 @@
     <title>Document</title>
 </head>
 <body>
-    <button>click</button>
+    <nav>
+        <button>click</button>
+        <button onclick="test()">click 2</button>
+    </nav>
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt non molestias veritatis odio ipsam nemo libero eos optio ad nisi aliquam perferendis dicta assumenda, autem fuga ducimus consequatur dolore quia?
     </p>
     <script>
-        
-        document.querySelector('button').onclick = function(){
-            console.log('test');
+        function test(){
             let p = document.querySelector('p')
             p.style.color = 'red';
             p.style.backgroundColor = 'blue';
             p.style.padding = '20px';
         }
+        // document.querySelector('button').onclick = function(){
+        //     console.log('test');
+        //     let p = document.querySelector('p')
+        //     p.style.color = 'red';
+        //     p.style.backgroundColor = 'blue';
+        //     p.style.padding = '20px';
+        // }
+
+        let btn = document.querySelector('button');
+        btn.addEventListener('click',function(){
+            let p = document.querySelector('p')
+            p.style.color = 'red';
+            p.style.backgroundColor = 'blue';
+            p.style.padding = '20px';
+        });
             
     </script>
 </body>

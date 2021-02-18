@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1 id="title">hello</h1>
+            </div>
+            <div class="col-4">
+                <h2>title</h2>
+                <ul>
+                    <li class="list">list 1</li>
+                    <li class="list">list 2</li>
+                    <li class="list">list 3</li>
+                    <li class="list">list 4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        // let title = document.querySelector('#title');
+        // console.log(title.parentElement);
+        // console.log(title.parentNode);
+        let row = document.querySelector('.row');
+        console.log(row.children);
+        console.log(row.childNodes);
+    </script>
+</body>
+</html>
