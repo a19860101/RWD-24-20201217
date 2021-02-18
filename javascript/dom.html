@@ -18,15 +18,52 @@
         </ul>
     </div>
     <script>
-        let title = document.getElementById('title');
-        console.log(title);
-        let content = document.getElementsByClassName('content');
-        console.log(content[0]);
-        let li = document.getElementsByTagName('li');
-        console.log(li[0]);
-        console.log(li[1]);
-        console.log(li[2]);
-        console.log(li[3]);
+        // let title = document.getElementById('title');
+        // console.log(title);
+        // let content = document.getElementsByClassName('content');
+        // console.log(content[0]);
+        // let li = document.getElementsByTagName('li');
+        // console.log(li[0]);
+        // console.log(li[1]);
+        // console.log(li[2]);
+        // console.log(li[3]);
+        // for(let i=0;i<li.length;i++){
+            // console.log(li[i]);
+        // }
+        // for (let list of li){
+        //     console.log(list);
+        // }
+
+        // let li_array = Array.from(li);
+        // console.log(li_array);
+        // li_array.forEach(function(list){
+        //     console.log(list);
+        // })
+
+
+
+        // let title = document.querySelector('#title');
+        // console.log(title);
+        // let content = document.querySelector('.content');
+        // let content = document.querySelectorAll('.content')[0];
+        // console.log(content);
+        // let li = document.querySelector('li');
+        let li = document.querySelectorAll('li');
+        // console.log(li[0]);
+        // console.log(li[1]);
+        // console.log(li[2]);
+        // console.log(li[3]);
+
+        // for(let list of li){
+        //     console.log(list);
+        // }
+        // li.forEach(function(list){
+        //     console.log(list);
+        // })
+        let li_array = Array.from(li);
+        li_array.forEach(function(list){
+            console.log(list);
+        })
     </script>
 </body>
 </html>
