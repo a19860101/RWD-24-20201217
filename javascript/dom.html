@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Hello Dom</h1>
+        <p class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, quasi?</p>
+        <ul>
+            <li><a href="#">link 1</a></li>
+            <li><a href="#">link 2</a></li>
+            <li><a href="#">link 3</a></li>
+            <li><a href="#">link 4</a></li>
+        </ul>
+    </div>
+    <script>
+        let title = document.getElementById('title');
+        console.log(title);
+        let content = document.getElementsByClassName('content');
+        console.log(content[0]);
+        let li = document.getElementsByTagName('li');
+        console.log(li[0]);
+        console.log(li[1]);
+        console.log(li[2]);
+        console.log(li[3]);
+    </script>
+</body>
+</html>
