@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="add()">新增</button>
+    <button id="btn">新增</button>
+    <button id="btn2">新增</button>
+    <ul id="output">
+    </ul>
+    <script>
+        function add(){
+            let input = document.querySelector('#input').value;
+            console.log(input);
+            let li = document.createElement('li');
+            li.append(input);
+            document.querySelector('#output').append(li);
+            document.querySelector('#input').value = '';
+        }
+        document.querySelector('#btn').onclick = function(){
+            add();
+        }
+        document.querySelector('#btn2').addEventListener('click',add);
+        // function add2(){
+        //     let input = document.querySelector('#input').value;
+        //     let textNode = document.createTextNode(input);
+        //     console.log(textNode);
+        //     document.querySelector('#output').appendChild(textNode);
+        // }
+    </script>
+</body>
+</html>
