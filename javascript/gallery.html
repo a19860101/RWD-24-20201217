@@ -35,7 +35,15 @@
         let thumbs = document.querySelectorAll('.thumb');
         // let img = document.querySelector('.thumbs').children;
         for(let thumb of thumbs){
-            console.log(thumb);
+            // console.log(thumb);
+            thumb.onclick = e => {
+                // let src = e.target.src;
+                let newSrc = e.target.getAttribute('src');
+                console.log(newSrc);
+                let picture = document.querySelector('.picture').children[0];
+                console.log(picture)
+                picture.setAttribute('src',newSrc);
+            }
         }
     </script>
 </body>
