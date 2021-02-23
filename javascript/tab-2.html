@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Gill Sans MT";
+        }
+        .tab {
+            width: 800px;
+            margin: auto;
+            position: relative;
+        }
+        .tab-nav {
+            display: flex;
+            position: relative;
+            z-index: 999;
+        }
+        .tab-link {
+            display: inline-block;
+            background-color: #ddd;
+            padding: 10px 30px;
+            text-decoration: none;
+            color: #000;
+            transition: .4s;
+        }
+        .tab-link.active {
+            background-color: #bbb;
+        }
+        .tab-panel {
+            background-color: #bbb;
+            padding: 30px;
+            position: absolute;
+            display: none;
+        }
+        .tab-panel.active {
+            display: block;
+            animation: fade-in-down 0.6s 
+        }
+
+        @keyframes fade-in-down {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab-nav">
+            <a href="#tab-1" data-panel="tab-1" class="tab-link active">Tab 1</a>
+            <a href="#tab-2" data-panel="tab-2" class="tab-link">Tab 2</a>
+            <a href="#tab-3" data-panel="tab-3" class="tab-link">Tab 3</a>
+            <a href="#tab-4" data-panel="tab-4" class="tab-link">Tab 4</a>
+        </div>
+        <div class="tab-panel active" id="tab-1">
+            <h2>Title 1</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nihil iusto corporis dolores, aut at amet quia praesentium facere voluptates perspiciatis reprehenderit sunt maxime, voluptatibus sint quibusdam veniam, maiores atque?
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-2">
+            <h2>Title 2</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nihil iusto corporis dolores, aut at amet quia praesentium facere voluptates perspiciatis reprehenderit sunt maxime, voluptatibus sint quibusdam veniam, maiores atque?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nihil iusto corporis dolores, aut at amet quia praesentium facere voluptates perspiciatis reprehenderit sunt maxime, voluptatibus sint quibusdam veniam, maiores atque?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nihil iusto corporis dolores, aut at amet quia praesentium facere voluptates perspiciatis reprehenderit sunt maxime, voluptatibus sint quibusdam veniam, maiores atque?
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-3">
+            <h2>Title 3</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nihil iusto corporis dolores, aut at amet quia praesentium facere voluptates perspiciatis reprehenderit sunt maxime, voluptatibus sint quibusdam veniam, maiores atque?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nihil iusto corporis dolores, aut at amet quia praesentium facere voluptates perspiciatis reprehenderit sunt maxime, voluptatibus sint quibusdam veniam, maiores atque?
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-4">
+            <h2>Title 4</h2>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nihil iusto corporis dolores, aut at amet quia praesentium facere voluptates perspiciatis reprehenderit sunt maxime, voluptatibus sint quibusdam veniam, maiores atque?
+            </p>
+        </div>
+    </div>
+    <script>
+        let tabLinks = document.querySelectorAll('.tab-link');
+        let tabPanels = document.querySelectorAll('.tab-panel');
+        for(let tabLink of tabLinks){
+            tabLink.onclick = e => {
+                for(let tabLink of tabLinks){
+                    tabLink.classList.remove('active');
+                }
+                e.target.classList.add('active');
+                let href = e.target.getAttribute('href');
+                console.log(href);
+                for(let tabPanel of tabPanels){
+                    console.log('#' + tabPanel.id);
+                    if(href == '#' + tabPanel.id){
+                        tabPanel.classList.add('active');
+                    }else{
+                        tabPanel.classList.remove('active');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
