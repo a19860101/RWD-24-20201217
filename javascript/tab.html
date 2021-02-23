@@ -78,18 +78,32 @@
     </div>
     <script>
         let tabLinks = document.querySelectorAll('.tab-link');
-        console.log(tabLinks)
-        for(let tabLink of tabLinks){
+        // console.log(tabLinks)tabLinksArray
+        let tabLinksArray = Array.from(tabLinks);
+        for(let tabLink of tabLinksArray){
             tabLink.onclick = function(e){
-                for(let tabLink of tabLinks){
+                for(let tabLink of tabLinksArray){
                     tabLink.classList.remove('active');
                 }
                 
+                // console.log(tabLinksArray)
+                
+                // let idx = tabLinksArray.findIndex(function(idx){
+                //     return idx == tabLink;
+                // })
+               
+                let idx = tabLinksArray.findIndex(idx => idx == tabLink);
+                
+                // let idx = tabLinksArray.indexOf(tabLink);
+
+                console.log(idx);
+
                 // console.log(this);
                 // this.classList.add('active');
 
                 // console.log(e.target);
                 e.target.classList.add('active');
+
             }
         }
     </script>

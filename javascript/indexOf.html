@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>cat</li>
+    </ul>
+    <script>
+        let s = 'Hello WOrld';
+        console.log(s.indexOf('H'));
+
+        let q = ['apple','banana','cat'];
+        // console.log(q.indexOf('banana'));
+        let lis = document.querySelectorAll('li');
+        // console.log(lis);
+        // console.log(lis.indexOf());
+        // let li_array = Array.from(lis);
+        // console.log(li_array);
+        // console.log(li_array.indexOf());
+
+        let li_array = Array.from(lis);
+        let idx = li_array.findIndex(function(idx){
+            return lis == 'cat';
+        });
+        console.log(idx);
+    </script>
+</body>
+</html>
