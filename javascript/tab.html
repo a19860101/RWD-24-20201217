@@ -13,8 +13,9 @@
             font-family: "Gill Sans MT";
         }
         .tab {
-            width: 800px ;
+            width: 800px;
             margin: auto;
+            position: relative;
         }
         .tab-nav {
             display: flex;
@@ -80,6 +81,7 @@
         let tabLinks = document.querySelectorAll('.tab-link');
         // console.log(tabLinks)tabLinksArray
         let tabLinksArray = Array.from(tabLinks);
+        let tabPanelArray = Array.from(document.querySelectorAll('.tab-panel'));
         for(let tabLink of tabLinksArray){
             tabLink.onclick = function(e){
                 for(let tabLink of tabLinksArray){
@@ -96,7 +98,7 @@
                 
                 // let idx = tabLinksArray.indexOf(tabLink);
 
-                console.log(idx);
+                // console.log(idx);
 
                 // console.log(this);
                 // this.classList.add('active');
@@ -104,6 +106,19 @@
                 // console.log(e.target);
                 e.target.classList.add('active');
 
+                for(let tabPanel of tabPanelArray){
+                    // console.log(tabPanel);
+                    // let panelIdx = tabPanelArray.findIndex(idx => idx == tabPanel);
+                    let panelIdx = tabPanelArray.indexOf(tabPanel);
+                    console.log(panelIdx);
+                    if(idx == panelIdx){
+                        tabPanel.classList.add('active');
+                    }else{
+                        tabPanel.classList.remove('active');
+
+                    }
+
+                }
             }
         }
     </script>
