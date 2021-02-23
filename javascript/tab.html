@@ -16,17 +16,39 @@
             width: 800px ;
             margin: auto;
         }
+        .tab-nav {
+            display: flex;
+        }
+        .tab-link {
+            display: inline-block;
+            background-color: #ddd;
+            padding: 10px 30px;
+            text-decoration: none;
+            color: #000;
+        }
+        .tab-link.active {
+            background-color: #bbb;
+        }
+        .tab-panel {
+            background-color: #bbb;
+            padding: 30px;
+            position: absolute;
+            display: none;
+        }
+        .tab-panel.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="tab">
         <div class="tab-nav">
-            <a href="#" class="tab-link">Tab 1</a>
+            <a href="#" class="tab-link active">Tab 1</a>
             <a href="#" class="tab-link">Tab 2</a>
             <a href="#" class="tab-link">Tab 3</a>
             <a href="#" class="tab-link">Tab 4</a>
         </div>
-        <div class="tab-panel">
+        <div class="tab-panel active">
             <h2>Title 1</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat nihil iusto corporis dolores, aut at amet quia praesentium facere voluptates perspiciatis reprehenderit sunt maxime, voluptatibus sint quibusdam veniam, maiores atque?
