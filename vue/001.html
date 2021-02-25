@@ -14,13 +14,20 @@
         <a :href="link">Yahoo!!</a>
         <button v-on:click="test()">click</button>
         <button @click="changeColor()">click2</button>
+        <div>
+            <input type="text" v-model="input">
+            <div>
+                {{input}}
+            </div>
+        </div>
     </div>
     <script>
         Vue.createApp({
             data(){
                 return {
                     title: 'HelloVue',
-                    link: 'https://tw.yahoo.com'
+                    link: 'https://tw.yahoo.com',
+                    input: '123456'
                 }
             },
             methods:{
