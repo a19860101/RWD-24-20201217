@@ -12,6 +12,8 @@
         <h1>{{ title }}</h1>
         <a v-bind:href="link">Yahoo</a>
         <a :href="link">Yahoo!!</a>
+        <button v-on:click="test()">click</button>
+        <button @click="changeColor()">click2</button>
     </div>
     <script>
         Vue.createApp({
@@ -19,6 +21,14 @@
                 return {
                     title: 'HelloVue',
                     link: 'https://tw.yahoo.com'
+                }
+            },
+            methods:{
+                test(){
+                    alert('hello test!');
+                },
+                changeColor(){
+                    document.querySelector('h1').style.color = 'red';
                 }
             }
         }).mount('#app');
