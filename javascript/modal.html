@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <style>
         * {
             margin: 0;
@@ -38,13 +39,19 @@
         @keyframes fade-in {
             from {opacity: 0;}
         }
+        .fas {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
     </style>
 </head>
 <body>
     <a href="#" class="modal-btn" data-modal="#about">About</a>
+    <a href="#" class="modal-btn" data-modal="#service">Service</a>
 
     <div class="modal" id="about">
-        <div class="modal-overlay"></div>
+        <div class="modal-overlay modal-close"></div>
         <div class="modal-container">
             <div class="modal-header">
                 <h2>About</h2>
@@ -59,25 +66,59 @@
             </div>
             <div class="modal-footer">
                 <a href="#" class="modal-close">CLOSE</a>
+                <i class="fas fa-times-circle fa-2x modal-close"></i>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="service">
+        <div class="modal-overlay modal-close"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Service</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda repudiandae in possimus at quia veniam. Magnam quam, fugit ipsum vero saepe praesentium atque, necessitatibus tenetur quis temporibus iure veritatis ex.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ut voluptas perferendis saepe tempore, enim ad, laudantium quod omnis atque blanditiis dolorum veniam porro sed recusandae cupiditate impedit animi quis.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ut voluptas perferendis saepe tempore, enim ad, laudantium quod omnis atque blanditiis dolorum veniam porro sed recusandae cupiditate impedit animi quis.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-close">CLOSE</a>
+                <i class="fas fa-times-circle fa-2x modal-close"></i>
             </div>
         </div>
     </div>
     <script>
         let modalBtns = document.querySelectorAll('.modal-btn');
+        let modals = document.querySelectorAll('.modal');
         for(let modalBtn of modalBtns){
             modalBtn.onclick = e => {
-                console.log(e.target);
+                // console.log(e.target);
                 let target = e.target.dataset.modal;
-                console.log(target);
+                // console.log(target);
                 // document.querySelector(target).style.display = 'block';
                 document.querySelector(target).classList.add('active');
             }
         } 
-        let modalCloses = document.querySelectorAll('.modal-close');
-        for(let modalClose of modalCloses){
-            modalClose.onclick = e => {
-                console.log(e.target.parentElement.parentElement.parentElement)
-                e.target.parentElement.parentElement.parentElement.classList.remove('active');
+        // let modalCloses = document.querySelectorAll('.modal-close');
+        // for(let modalClose of modalCloses){
+        //     modalClose.onclick = e => {
+        //         console.log(e.target.parentElement.parentElement.parentElement)
+        //         e.target.parentElement.parentElement.parentElement.classList.remove('active');
+        //     }
+        // }
+        document.onclick = e => {
+            // console.log(e.target);
+            console.log(e.target.className);
+            if(e.target.className.indexOf('modal-close') > -1){
+                for(let modal of modals){
+                    modal.classList.remove('active');
+                }
             }
         }
     </script>
