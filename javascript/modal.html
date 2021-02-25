@@ -15,6 +15,10 @@
             position: relative;
             display: none;
         }
+        .modal.active {
+            display: block;
+            animation: fade-in 1s;
+        }
         .modal-overlay {
             background-color: rgba(0,0,0,.7);
             position: fixed;
@@ -30,6 +34,9 @@
             background-color: #fff;
             padding: 30px;
             border-radius: 6px;
+        }
+        @keyframes fade-in {
+            from {opacity: 0;}
         }
     </style>
 </head>
@@ -51,7 +58,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                2021-2-28
+                <a href="#" class="modal-close">CLOSE</a>
             </div>
         </div>
     </div>
@@ -62,9 +69,17 @@
                 console.log(e.target);
                 let target = e.target.dataset.modal;
                 console.log(target);
-                document.querySelector(target).style.display = 'block';
+                // document.querySelector(target).style.display = 'block';
+                document.querySelector(target).classList.add('active');
             }
         } 
+        let modalCloses = document.querySelectorAll('.modal-close');
+        for(let modalClose of modalCloses){
+            modalClose.onclick = e => {
+                console.log(e.target.parentElement.parentElement.parentElement)
+                e.target.parentElement.parentElement.parentElement.classList.remove('active');
+            }
+        }
     </script>
 </body>
 </html>
