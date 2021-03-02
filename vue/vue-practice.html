@@ -25,8 +25,12 @@
             <li v-for="d in desc">{{d}}</li>
         </ul>
         <div class="colorBoxes">
-            <div v-for="prod in products" class="colorBox" v-bind:style="{backgroundColor:prod.color}"></div>
-            <div v-for="prod in products" class="colorBox" v-bind:style="{'background-color':prod.color}"></div>
+            <div 
+                v-for="(prod,idx) in products" 
+                class="colorBox" 
+                :style="{backgroundColor:prod.color}"
+                @click="changeColor(idx)"></div>
+            <!-- <div v-for="prod in products" class="colorBox" v-bind:style="{'background-color':prod.color}"></div> -->
         </div>
     </div>
     <script>
@@ -76,6 +80,13 @@
                             qty: 13
                         }
                     ]
+                }
+            },
+            methods:{
+                changeColor(idx){
+                    // console.log(idx);
+                    // console.log(this.products[idx].img);
+                    this.img = this.products[idx].img;
                 }
             }
         }).mount('#app');
