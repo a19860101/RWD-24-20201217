@@ -21,7 +21,10 @@
     <div id="app">
         <h1>{{title}} {{colorName}}</h1>
         <img :src="img" alt="">
-        <h2>剩餘數量: {{qty}}</h2>
+        <div>{{qty}}</div>
+        <h1 v-if="qty > 10">熱賣中</h1>
+        <h1 v-else-if="qty > 0 && qty  <= 10">低庫存</h1>
+        <h1 v-else>補貨中</h1>
         <ul>
             <li v-for="d in desc">{{d}}</li>
         </ul>
