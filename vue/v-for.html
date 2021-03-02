@@ -12,10 +12,10 @@
         <h1>{{title}}</h1>
         <div>{{drinks}}</div>
         <ul>
-            <li v-for="drink in drinks">{{drink}}</li>
+            <li v-for="(drink,idx) in drinks">{{drink}}..{{idx}}</li>
         </ul>
         <ul>
-            <li v-for="drink of drinks">{{drink}}</li>
+            <li v-for="(drink,idx) of drinks">{{drink}}..{{idx}}</li>
         </ul>
     </div>
     <script>
