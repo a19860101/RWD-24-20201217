@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <p>{{desc}}</p>
+        <div>{{drinks}}</div>
+    </div>
+    <script>
+        Vue.createApp({
+            setup(){
+                let title = 'Hello VUE';
+                const desc = 'test';
+                const drinks = ['tea','coffee'];
+
+                return {
+                    title,desc,drinks
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
