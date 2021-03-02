@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            name : 'John',
+            mail : 'asdf@gmail.com',
+            address: 'asdfas flwqkejflwkefjwl '
+        }
+        // console.log(obj.name);
+        // console.log(obj.mail);
+        // console.log(obj.address);
+
+        const { name,mail,address } = obj;
+        console.log(name);
+        console.log(mail);
+        console.log(address);
+
+        const Vue = {
+            ref:function(){
+                return 'REF'
+            },
+            reactive:function(){
+                return 'REACTIVE'
+            }
+        }
+        // console.log(Vue.reactive());
+        const {ref, reactive} = Vue;
+        console.log(ref());
+        console.log(reactive());
+    </script>
+</body>
+</html>
