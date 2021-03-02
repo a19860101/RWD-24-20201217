@@ -19,8 +19,9 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{title}}</h1>
+        <h1>{{title}} {{colorName}}</h1>
         <img :src="img" alt="">
+        <h2>剩餘數量: {{qty}}</h2>
         <ul>
             <li v-for="d in desc">{{d}}</li>
         </ul>
@@ -29,7 +30,7 @@
                 v-for="(prod,idx) in products" 
                 class="colorBox" 
                 :style="{backgroundColor:prod.color}"
-                @click="changeColor(idx)"></div>
+                @click="changeIndex(idx)"></div>
             <!-- <div v-for="prod in products" class="colorBox" v-bind:style="{'background-color':prod.color}"></div> -->
         </div>
     </div>
@@ -38,11 +39,12 @@
             data(){
                 return {
                     title: '純棉網眼抽縐polo衫-男',
-                    img: 'images/5341701_500.jpg',
+                    // img: 'images/5341701_500.jpg',
                     desc: [
                         '產地:中國',
                         '棉100%'
                     ],
+                    selectedIndex: 0,
                     products:[
                         {
                             id:1,
@@ -87,7 +89,23 @@
                     // console.log(idx);
                     // console.log(this.products[idx].img);
                     this.img = this.products[idx].img;
+                },
+                changeIndex(idx){
+                    this.selectedIndex = idx;
+
                 }
+            },
+            computed:{
+                img(){
+                    return this.products[this.selectedIndex].img
+                },
+                colorName(){
+                    return this.products[this.selectedIndex].colorName;
+                },
+                qty(){
+                    return this.products[this.selectedIndex].qty;
+                }
+
             }
         }).mount('#app');
     </script>
