@@ -10,18 +10,25 @@
 <body>
     <div id="app">
         <h1>{{title}}</h1>
-        <p>{{desc}}</p>
-        <div>{{drinks}}</div>
+        <h2>{{num}}</h2>
     </div>
     <script>
         Vue.createApp({
             setup(){
-                let title = 'Hello VUE';
-                const desc = 'test';
-                const drinks = ['tea','coffee'];
+                let title = Vue.ref('Hello VUE!!!');
+                let num = Vue.ref(100);
+                // let title = 'Hello VUE';
+                
+                setTimeout(function(){
+                    // title = '!!!!!!!!!!!!!';
+                    title.value = '!!!!!!!!!!!!!';
+                    num.value = num.value + 1;
+                    console.log(title);
+                    console.log(title.value);
+                },3000);
 
                 return {
-                    title,desc,drinks
+                    title,num
                 }
             }
         }).mount('#app');
