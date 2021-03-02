@@ -11,12 +11,23 @@
     <div id="app">
         <h1>{{title}}</h1>
         <h2>{{num}}</h2>
+        <div>
+            {{drinks[2]}}
+        </div>
     </div>
     <script>
         Vue.createApp({
             setup(){
-                let title = Vue.ref('Hello VUE!!!');
-                let num = Vue.ref(100);
+
+                //解構物件
+                const {ref,reactive} = Vue;
+
+                // let title = Vue.ref('Hello VUE!!!');
+                // let num = Vue.ref(100);
+                // let drinks = Vue.reactive(['紅茶','綠茶','QQ咩噗茶','冰淇淋紅茶']);
+                let title = ref('Hello VUE!!!');
+                let num = ref(100);
+                let drinks = reactive(['紅茶','綠茶','QQ咩噗茶','冰淇淋紅茶']);
                 // let title = 'Hello VUE';
                 
                 setTimeout(function(){
@@ -25,10 +36,12 @@
                     num.value = num.value + 1;
                     console.log(title);
                     console.log(title.value);
+                    console.log(drinks);
                 },3000);
 
                 return {
-                    title,num
+                    title,num,
+                    drinks
                 }
             }
         }).mount('#app');
