@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .colorBox {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+        }
+        .colorBoxes {
+            display: flex;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -14,6 +24,10 @@
         <ul>
             <li v-for="d in desc">{{d}}</li>
         </ul>
+        <div class="colorBoxes">
+            <div v-for="prod in products" class="colorBox" v-bind:style="{backgroundColor:prod.color}"></div>
+            <div v-for="prod in products" class="colorBox" v-bind:style="{'background-color':prod.color}"></div>
+        </div>
     </div>
     <script>
         Vue.createApp({
@@ -24,6 +38,43 @@
                     desc: [
                         '產地:中國',
                         '棉100%'
+                    ],
+                    products:[
+                        {
+                            id:1,
+                            color:'#2662ab',
+                            colorName:'藍色',
+                            img: 'images/5341701_500.jpg',
+                            qty: 3
+                        },
+                        {
+                            id:2,
+                            color:'#512878',
+                            colorName:'紫色',
+                            img: 'images/5341702_500.jpg',
+                            qty: 4
+                        },
+                        {
+                            id:3,
+                            color:'#ff2b4f',
+                            colorName:'紅色',
+                            img: 'images/5341707_500.jpg',
+                            qty: 7
+                        },
+                        {
+                            id:4,
+                            color:'#faf25c',
+                            colorName:'黃色',
+                            img: 'images/5341714_500.jpg',
+                            qty: 0
+                        },
+                        {
+                            id:5,
+                            color:'#000',
+                            colorName:'黑色',
+                            img: 'images/5341720_500.jpg',
+                            qty: 13
+                        }
                     ]
                 }
             }
