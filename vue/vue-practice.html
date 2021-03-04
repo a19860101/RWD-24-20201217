@@ -15,6 +15,11 @@
         .colorBoxes {
             display: flex;
         }
+        .cart {
+            position: fixed;
+            right: 30px;
+            top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -36,6 +41,10 @@
                 @click="changeIndex(idx)"></div>
             <!-- <div v-for="prod in products" class="colorBox" v-bind:style="{'background-color':prod.color}"></div> -->
         </div>
+        <button @click="addCart()">加入購物車</button>
+        <div class="cart">
+            購物車:{{cart}}
+        </div>
     </div>
     <script>
         Vue.createApp({
@@ -47,6 +56,7 @@
                         '產地:中國',
                         '棉100%'
                     ],
+                    cart: 0,
                     selectedIndex: 0,
                     products:[
                         {
@@ -96,6 +106,9 @@
                 changeIndex(idx){
                     this.selectedIndex = idx;
 
+                },
+                addCart(){
+                    this.cart += 1;
                 }
             },
             computed:{
