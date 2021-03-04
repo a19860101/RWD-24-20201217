@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .colorBox {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+        }
+        .colorBoxes {
+            display: flex;
+        }
+        .cart {
+            position: fixed;
+            right: 30px;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <app-product @add-to-cart="addToCart"></app-product>
+        <app-cart :cart="cart"></app-cart>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    cart: 0
+                }
+            },
+            methods:{
+                addToCart(){
+                    this.cart += 1;
+                }
+            }
+
+           
+        })
+        app.component('app-cart',{
+            props:['cart'],
+            template:`
+                <div class="cart">
+                    購物車:{{cart}}
+                </div>
+            `
+        })
+        app.component('app-product',{
+            data(){
+                return {
+                    title: '純棉網眼抽縐polo衫-男',
+                    // img: 'images/5341701_500.jpg',
+                    desc: [
+                        '產地:中國',
+                        '棉100%'
+                    ],
+                    cart: 0,
+                    selectedIndex: 0,
+                    products:[
+                        {
+                            id:1,
+                            color:'#2662ab',
+                            colorName:'藍色',
+                            img: 'images/5341701_500.jpg',
+                            qty: 3
+                        },
+                        {
+                            id:2,
+                            color:'#512878',
+                            colorName:'紫色',
+                            img: 'images/5341702_500.jpg',
+                            qty: 4
+                        },
+                        {
+                            id:3,
+                            color:'#ff2b4f',
+                            colorName:'紅色',
+                            img: 'images/5341707_500.jpg',
+                            qty: 7
+                        },
+                        {
+                            id:4,
+                            color:'#faf25c',
+                            colorName:'黃色',
+                            img: 'images/5341714_500.jpg',
+                            qty: 0
+                        },
+                        {
+                            id:5,
+                            color:'#000',
+                            colorName:'黑色',
+                            img: 'images/5341720_500.jpg',
+                            qty: 13
+                        }
+                    ]
+                }
+            },
+            methods:{
+                changeColor(idx){
+                    // console.log(idx);
+                    // console.log(this.products[idx].img);
+                    this.img = this.products[idx].img;
+                },
+                changeIndex(idx){
+                    this.selectedIndex = idx;
+
+                },
+                addCart(){
+                    this.$emit('add-to-cart');
+                }
+            },
+            computed:{
+                img(){
+                    return this.products[this.selectedIndex].img
+                },
+                colorName(){
+                    return this.products[this.selectedIndex].colorName;
+                },
+                qty(){
+                    return this.products[this.selectedIndex].qty;
+                }
+
+            },
+            template:`
+                <h1>{{title}} {{colorName}}</h1>
+                <img :src="img" alt="">
+                <div>{{qty}}</div>
+                <h1 v-if="qty > 10">熱賣中</h1>
+                <h1 v-else-if="qty > 0 && qty  <= 10">低庫存</h1>
+                <h1 v-else>補貨中</h1>
+                <ul>
+                    <li v-for="d in desc">{{d}}</li>
+                </ul>
+                <div class="colorBoxes">
+                    <div 
+                        v-for="(prod,idx) in products" 
+                        class="colorBox" 
+                        :style="{backgroundColor:prod.color}"
+                        @click="changeIndex(idx)"></div>
+                    <!-- <div v-for="prod in products" class="colorBox" v-bind:style="{'background-color':prod.color}"></div> -->
+                </div>
+                <button @click="addCart()" v-if="qty > 0">加入購物車</button>
+                <button disabled v-else>加入購物車</button>
+            `
+        })
+        app.mount('#app');
+    </script>
+</body>
+</html>
