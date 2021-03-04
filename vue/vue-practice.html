@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        <app-product></app-product>
+        <app-product @add-to-cart="addToCart"></app-product>
         <div class="cart">
             購物車:{{cart}}
         </div>
@@ -35,7 +35,13 @@
                 return {
                     cart: 0
                 }
+            },
+            methods:{
+                addToCart(){
+                    this.cart += 1;
+                }
             }
+
            
         })
         app.component('app-product',{
@@ -98,6 +104,9 @@
                     this.selectedIndex = idx;
 
                 },
+                addCart(){
+                    this.$emit('add-to-cart');
+                }
             },
             computed:{
                 img(){
