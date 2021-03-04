@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <style>
-        #app{
+        .container{
             display: flex;
             flex-wrap: wrap;
         }
@@ -16,9 +16,12 @@
 </head>
 <body>
     <div id="app">
-        <div v-for="photo in photos" class="container">
-            <img :src="photo.download_url" width="200">
-            <h2>{{photo.author}}</h2>
+        <button @click="loading()">載入圖片</button>
+        <div class="container">
+            <div v-for="photo in photos">
+                <img :src="photo.download_url" width="200">
+                <h2>{{photo.author}}</h2>
+            </div>
         </div>
     </div>
     <script>
@@ -28,17 +31,30 @@
                     photos:[]
                 }
             },
-            created(){
-                let url = 'https://picsum.photos/v2/list';
-                axios(url,{
-                    params: {
-                        limit: 10
-                    }
-                })
-                .then(res => {
-                    this.photos = res.data;
-                })
+            methods:{
+                loading(){
+                    let url = 'https://picsum.photos/v2/list';
+                    axios(url,{
+                        params: {
+                            limit: 10
+                        }
+                    })
+                    .then(res => {
+                        this.photos = res.data;
+                    })
+                }
             }
+            // created(){
+            //     let url = 'https://picsum.photos/v2/list';
+            //     axios(url,{
+            //         params: {
+            //             limit: 10
+            //         }
+            //     })
+            //     .then(res => {
+            //         this.photos = res.data;
+            //     })
+            // }
             // created(){
             //     let url = 'https://picsum.photos/v2/list';
             //     fetch(url)
