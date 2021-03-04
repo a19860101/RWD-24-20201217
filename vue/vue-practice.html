@@ -41,7 +41,8 @@
                 @click="changeIndex(idx)"></div>
             <!-- <div v-for="prod in products" class="colorBox" v-bind:style="{'background-color':prod.color}"></div> -->
         </div>
-        <button @click="addCart()">加入購物車</button>
+        <button @click="addCart()" v-if="qty > 0">加入購物車</button>
+        <button disabled v-else>加入購物車</button>
         <div class="cart">
             購物車:{{cart}}
         </div>
