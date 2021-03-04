@@ -9,12 +9,18 @@
 </head>
 <body>
     <div id="app">
-        <app-title></app-title>
+        <!-- <app-title :test="title"></app-title> -->
+        <app-title :test="title" :number="num"></app-title>
         <app-hello></app-hello>
     </div>
     <script>
         const app = Vue.createApp({
-            
+            data(){
+                return {
+                    title: 'qwerty!!!!!',
+                    num: 123456
+                }
+            },
             components:{
                 appHello:{
                     data(){
@@ -27,12 +33,13 @@
             }
         })
         app.component('app-title',{
+            props:['test','number'],
             data(){
                 return {
                     name: 'Mary',
                 }
             },
-            template:`<h1>HELLO {{name}}</h1>`
+            template:`<h1>HELLO {{name}} {{test}} {{number}}</h1>`
         })
         app.mount('#app');
     </script>
