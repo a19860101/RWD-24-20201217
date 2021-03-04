@@ -24,31 +24,21 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{title}} {{colorName}}</h1>
-        <img :src="img" alt="">
-        <div>{{qty}}</div>
-        <h1 v-if="qty > 10">熱賣中</h1>
-        <h1 v-else-if="qty > 0 && qty  <= 10">低庫存</h1>
-        <h1 v-else>補貨中</h1>
-        <ul>
-            <li v-for="d in desc">{{d}}</li>
-        </ul>
-        <div class="colorBoxes">
-            <div 
-                v-for="(prod,idx) in products" 
-                class="colorBox" 
-                :style="{backgroundColor:prod.color}"
-                @click="changeIndex(idx)"></div>
-            <!-- <div v-for="prod in products" class="colorBox" v-bind:style="{'background-color':prod.color}"></div> -->
-        </div>
-        <button @click="addCart()" v-if="qty > 0">加入購物車</button>
-        <button disabled v-else>加入購物車</button>
+        <app-product></app-product>
         <div class="cart">
             購物車:{{cart}}
         </div>
     </div>
     <script>
-        Vue.createApp({
+        const app = Vue.createApp({
+            data(){
+                return {
+                    cart: 0
+                }
+            }
+           
+        })
+        app.component('app-product',{
             data(){
                 return {
                     title: '純棉網眼抽縐polo衫-男',
@@ -108,9 +98,6 @@
                     this.selectedIndex = idx;
 
                 },
-                addCart(){
-                    this.cart += 1;
-                }
             },
             computed:{
                 img(){
@@ -123,8 +110,30 @@
                     return this.products[this.selectedIndex].qty;
                 }
 
-            }
-        }).mount('#app');
+            },
+            template:`
+                <h1>{{title}} {{colorName}}</h1>
+                <img :src="img" alt="">
+                <div>{{qty}}</div>
+                <h1 v-if="qty > 10">熱賣中</h1>
+                <h1 v-else-if="qty > 0 && qty  <= 10">低庫存</h1>
+                <h1 v-else>補貨中</h1>
+                <ul>
+                    <li v-for="d in desc">{{d}}</li>
+                </ul>
+                <div class="colorBoxes">
+                    <div 
+                        v-for="(prod,idx) in products" 
+                        class="colorBox" 
+                        :style="{backgroundColor:prod.color}"
+                        @click="changeIndex(idx)"></div>
+                    <!-- <div v-for="prod in products" class="colorBox" v-bind:style="{'background-color':prod.color}"></div> -->
+                </div>
+                <button @click="addCart()" v-if="qty > 0">加入購物車</button>
+                <button disabled v-else>加入購物車</button>
+            `
+        })
+        app.mount('#app');
     </script>
 </body>
 </html>
