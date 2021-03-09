@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1 id="title">hello</h1>
+            </div>
+            <div class="col-4">
+                <h2>title</h2>
+                <ul>
+                    <li class="list">list 1</li>
+                    <li class="list">list 2</li>
+                    <li class="list">list 3</li>
+                    <li class="list">list 4</li>
+                </ul>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-12"></div>
+            <div class="col-9"></div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            //父元素
+            // console.log($('h2').parent());
+            // console.log($('h2').parents());
+            console.log($('h2').parents('.row'));
+            // 
+
+            //同輩元素
+            console.log($('h2').next());
+            console.log($('h2').prev());
+            console.log($('.col-4').siblings());
+            console.log($('.col-4').siblings('.col-9'));
+
+            //相同的同輩元素
+            console.log($('h2').eq(1));
+            console.log($('.list').eq(0).text());
+            console.log($('.list').eq(1).text());
+            console.log($('.list').eq(2).text());
+            console.log($('.list').eq(3).text());
+        })
+    </script>
+</body>
+</html>
