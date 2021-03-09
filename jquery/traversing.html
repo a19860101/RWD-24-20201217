@@ -47,6 +47,14 @@
             console.log($('.list').eq(1).text());
             console.log($('.list').eq(2).text());
             console.log($('.list').eq(3).text());
+
+            //子輩元素
+            console.log($('.row').children());
+            console.log($('.row').children('.col-12'));
+            //後代元素
+            console.log($('.row').find('.list'));
+            console.log($('.row').find('h2'));
+            console.log($('.row').find('#title'));
         })
     </script>
 </body>
