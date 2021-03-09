@@ -59,5 +59,14 @@
     <div id="service"></div>
     <div id="product"></div>
     <div id="contact"></div>
+    <script>
+        $(function(){
+            let a = $('#about').offset().top;
+            let s = $('#service').offset().top;
+            let p = $('#product').offset().top;
+            let c = $('#contact').offset().top;
+            console.log(a,s,p,c);
+        })
+    </script>
 </body>
 </html>
