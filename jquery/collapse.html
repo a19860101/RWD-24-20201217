@@ -21,6 +21,16 @@
             background-color: #f4d160;
             padding: 15px;
             border-bottom: #fbeeac 1px solid;
+            transition: .3s;
+            letter-spacing: 5px;
+        }
+        h2:hover {
+            background-color: #8ac4d0;
+        }
+        h2.active {
+            background-color: #8ac4d0;
+            transition: .3s;
+            letter-spacing: 0px;
         }
         p {
             background-color: #fbeeac;
@@ -35,7 +45,12 @@
                 // console.log($(this).text())
                 // $('p').show();
                 // $('p').toggle();
-                $(this).next().toggle(300);
+                // $(this).next().toggle(300);
+                // $(this).next().fadeToggle();
+                $(this).next().slideToggle(150);
+                $(this).toggleClass('active');
+                //addClass(), removeClass(), toggleClass() 
+
             });
         })
     </script>
