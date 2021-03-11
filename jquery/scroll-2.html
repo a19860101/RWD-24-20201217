@@ -38,11 +38,11 @@
             border-bottom: 3px solid #fff;
             left: 0;
             bottom: -5px;
-            animation: fadeIn 1s;
+            animation: fadeIn 0.1s;
         }
         @keyframes fadeIn{
-            from {opacity: 0;transform: scaleX(0);}
-            to {opacity: 1;transform: scaleX(1);}
+            from {opacity: 0;}
+            to {opacity: 1;}
         }
         #about {
             width: 100%;
@@ -130,8 +130,8 @@
                 $('html,body').animate({
                     scrollTop: offset
                 })
-                $('nav').find('a').removeClass('active');
-                $(this).addClass('active');
+                // $('nav').find('a').removeClass('active');
+                // $(this).addClass('active');
             })
             $('#gotop').click(function(e){
                 $('html,body').animate({
@@ -157,6 +157,17 @@
                     // $('#gotop').removeClass('animate-in').addClass('animate-out');
                     $('#gotop').removeClass(animate_in).addClass(animate_out);
                 }
+
+                $('nav').find('a').each(function(){
+                    let target = $(this).data('target');
+                    let offset = $(target).offset().top;
+                    console.log(offset);
+
+                    if(distance > offset - 150){
+                        $('nav').find('a').removeClass('active');
+                        $(this).addClass('active');
+                    }
+                })
             });
         })
     </script>
