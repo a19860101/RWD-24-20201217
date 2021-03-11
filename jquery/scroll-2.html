@@ -60,6 +60,29 @@
             line-height: 60px;
             display: none;
         }
+        .animate-in {
+            animation: in 0.5s;
+        }
+        .animate-out {
+            animation: out 0.5s forwards;
+        }
+        @keyframes in {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes out {
+            from {}
+            to {
+                opacity: 0;
+                transform: rotate(180deg)scale(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -77,11 +100,11 @@
     <a href="#" id="gotop">TOP</a>
     <script>
         
+        function q(){
+            event.preventDefault();
+            return false;
+        }
         $(function(){
-            // function q(){
-            //     e.preventDefault();
-            //     return false;
-            // }
             $('nav').find('a').click(function(){
                 let target = $(this).data('target');
                 let offset = $(target).offset().top;
@@ -94,8 +117,8 @@
                 $('html,body').animate({
                     scrollTop: 0
                 })
-                return false ;
-                // q();
+                // return false ;
+                q();
                 
             })
             $(window).scroll(function(){
@@ -103,10 +126,12 @@
                 // console.log(distance);
                 if(distance > 800){
                     // $('#gotop').show();
-                    $('#gotop').fadeIn();
+                    // $('#gotop').fadeIn();
+                    $('#gotop').show().removeClass('animate-out').addClass('animate-in');
                 }else{
                     // $('#gotop').hide();
-                    $('#gotop').fadeOut();
+                    // $('#gotop').fadeOut();
+                    $('#gotop').removeClass('animate-in').addClass('animate-out');
                 }
             });
         })
