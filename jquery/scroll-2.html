@@ -58,6 +58,7 @@
             text-decoration: none;
             text-align: center;
             line-height: 60px;
+            display: none;
         }
     </style>
 </head>
@@ -89,6 +90,15 @@
                     scrollTop: 0
                 })
             })
+            $(window).scroll(function(){
+                let distance = $(window).scrollTop();
+                console.log(distance);
+                if(distance > 800){
+                    $('#gotop').show();
+                }else{
+                    $('#gotop').hide();
+                }
+            });
         })
     </script>
 </body>
