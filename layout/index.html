@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="active">
+    <nav>
         <a href="#" data-target="#about">About</a>
         <a href="#" data-target="#news">News</a>
         <a href="#" data-target="#products">Products</a>
@@ -216,6 +216,7 @@
                     scrollTop: offset
                 })
                 e.preventDefault();
+                $('nav').removeClass('active')
             })
             $('#gotop').click(function(e){
                 $('html,body').animate({

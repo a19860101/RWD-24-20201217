@@ -99,7 +99,7 @@ nav a.active {
     
         position: fixed;
         z-index: 9999;
-
+        transform: translateX(0);
         display: block;
     }
     /* !後代選取器 */
