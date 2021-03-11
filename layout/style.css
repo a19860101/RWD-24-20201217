@@ -40,6 +40,10 @@ nav a:hover {
     background-color: #fff16f;
     color: #222;
 }
+nav a.active {
+    background-color: #fff16f;
+    color: #222;
+}
 .nav-toggle {
     width: 75px;
     height: 75px;

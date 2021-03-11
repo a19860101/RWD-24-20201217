@@ -222,6 +222,19 @@
                 }else{
                     $('#gotop').fadeOut();
                 }
+                $('nav').find('a').each(function(){
+                    let target = $(this).data('target');
+                    let offset = $(target).offset().top;
+                    console.log(offset);
+
+                    if(distance > offset - 150){
+                        $('nav').find('a').removeClass('active');
+                        $(this).addClass('active');
+                    }
+                    if(distance < 800){
+                        $('nav').find('a').removeClass('active');
+                    }
+                })
             })
         })
     </script>
