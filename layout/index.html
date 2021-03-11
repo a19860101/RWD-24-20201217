@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav class="active">
         <a href="#" data-target="#about">About</a>
         <a href="#" data-target="#news">News</a>
         <a href="#" data-target="#products">Products</a>
@@ -202,10 +202,12 @@
     <script>
         $(function(){
             $('.nav-open').click(function(){
-                $('nav').fadeIn();
+                // $('nav').fadeIn();
+                $('nav').addClass('active')
             })
             $('.nav-close').click(function(){
-                $('nav').fadeOut();
+                // $('nav').fadeOut();
+                $('nav').removeClass('active');
             })
             $('nav').find('a').click(function(e){
                 let target = $(this).data('target');

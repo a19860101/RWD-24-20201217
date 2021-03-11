@@ -23,8 +23,14 @@ nav {
     position: fixed;
     z-index: 9999;
 
-    display: none;
+    /* display: none; */
     position: fixed;
+    transform: translateX(100%);
+    transition: .3s;;
+}
+nav.active {
+    transform: translateX(0);
+    transition: .3s;
 }
 /* !後代選取器 */
 nav a {
