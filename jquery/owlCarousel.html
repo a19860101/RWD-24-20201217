@@ -27,6 +27,19 @@
             <img src="https://picsum.photos/id/15/1600/800" alt="">
             <img src="https://picsum.photos/id/16/1600/800" alt="">
         </div>
+        <div id="products" class="owl-carousel owl-theme">
+            <img src="https://picsum.photos/id/81/400/" alt="">
+            <img src="https://picsum.photos/id/82/400/" alt="">
+            <img src="https://picsum.photos/id/83/400/" alt="">
+            <img src="https://picsum.photos/id/84/400/" alt="">
+            <img src="https://picsum.photos/id/85/400/" alt="">
+            <img src="https://picsum.photos/id/96/400/" alt="">
+            <img src="https://picsum.photos/id/87/400/" alt="">
+            <img src="https://picsum.photos/id/88/400/" alt="">
+            <img src="https://picsum.photos/id/89/400/" alt="">
+            <img src="https://picsum.photos/id/30/400/" alt="">
+            <img src="https://picsum.photos/id/31/400/" alt="">
+        </div>
     </header>
     <script>
         $(function(){
@@ -40,6 +53,16 @@
                 dotsSpeed: 600,
                 nav: false,
                 navSpeed: 600,
+                navText:['<i class="fas fa-chevron-circle-left fa-lg"></i>','<i class="fas fa-chevron-circle-right fa-lg"></i>']
+            })
+            $('#products').owlCarousel({
+                items:6,
+                autoplay: true,
+                loop: true,
+                dots:false,
+                nav: true,
+                margin:10,
+                center: true,
                 navText:['<i class="fas fa-chevron-circle-left fa-lg"></i>','<i class="fas fa-chevron-circle-right fa-lg"></i>']
             })
         })
